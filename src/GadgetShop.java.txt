@@ -1,0 +1,24 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
+
+public class GadgetShop extends JFrame implements ActionListener
+{
+    private ArrayList<Gadget> gadgets;
+
+    public GadgetShop()
+    {
+        gadgets = new ArrayList<Gadget>();
+    }
+
+    public static void main(String[] args)
+    {
+        new GadgetShop();
+    }
+
+    public void actionPerformed(ActionEvent e)
+    {
+        // button handling will go here later
+    }
+}
