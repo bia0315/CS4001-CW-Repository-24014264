@@ -1,20 +1,23 @@
-// Mobile class inherits from Gadget
+// Mobile class extends Gadget
 public class Mobile extends Gadget {
 
-    private String size;
-    private int credit;
+    private int minutes;
+    private int texts;
 
     // Constructor
-    public Mobile(String model, double price, int weight, String size, int credit) {
-        super(model, price, weight);  // Call parent constructor
-        this.size = size;
-        this.credit = credit;
+    public Mobile(int itemNumber, String brand, double price, int minutes, int texts) {
+        super(itemNumber, brand, price); // Call parent constructor
+        this.minutes = minutes;
+        this.texts = texts;
     }
 
-    // Method to add credit
-    public void addCredit(int amount) {
-        if (amount > 0) {
-            credit += amount;
+    // Method to make a call
+    public String makeCall(int callMinutes) {
+        if (callMinutes <= minutes) {
+            minutes -= callMinutes;
+            return "Call successful. Remaining minutes: " + minutes;
+        } else {
+            return "Not enough minutes.";
         }
     }
 
@@ -22,8 +25,9 @@ public class Mobile extends Gadget {
     @Override
     public String displayInfo() {
         return super.displayInfo() +
-               "\nSize: " + size +
-               "\nCredit: " + credit +
-               "\n-------------------";
+               "\nType: Mobile" +
+               "\nMinutes: " + minutes +
+               "\nTexts: " + texts +
+               "\n-----------------------";
     }
 }
