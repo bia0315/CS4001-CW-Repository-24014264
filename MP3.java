@@ -1,33 +1,36 @@
 // MP3 class extends Gadget
 public class MP3 extends Gadget {
 
-    private double memorySize;   // Total memory
-    private double memoryUsed;   // Used memory
+    private double availableMemory;
 
-    // Constructor
-    public MP3(int itemNumber, String brand, double price, double memorySize) {
-        super(itemNumber, brand, price);
-        this.memorySize = memorySize;
-        this.memoryUsed = 0;
+    public MP3(String model, double price, int weight, String size, double availableMemory) {
+        super(model, price, weight, size);
+        this.availableMemory = availableMemory;
     }
 
-    // Method to download music
-    public String download(double size) {
-        if (memoryUsed + size <= memorySize) {
-            memoryUsed += size;
-            return "Download successful. Used memory: " + memoryUsed + "GB";
+    public double getAvailableMemory() {
+        return availableMemory;
+    }
+
+    // Download music
+    public void downloadMusic(double size) {
+        if (size <= availableMemory) {
+            availableMemory -= size;
+            System.out.println("Music downloaded. Remaining memory: " + availableMemory);
         } else {
-            return "Not enough memory.";
+            System.out.println("Not enough memory.");
         }
     }
 
-    // Override display method
-    @Override
-    public String displayInfo() {
-        return super.displayInfo() +
-               "\nType: MP3 Player" +
-               "\nTotal Memory: " + memorySize + "GB" +
-               "\nUsed Memory: " + memoryUsed + "GB" +
-               "\n-----------------------";
+    // Delete music
+    public void deleteMusic(double size) {
+        availableMemory += size;
+        System.out.println("Music deleted. Available memory: " + availableMemory);
+    }
+
+    // Override display
+    public void display() {
+        super.display();
+        System.out.println("Available memory: " + availableMemory + "GB");
     }
 }

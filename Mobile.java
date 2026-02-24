@@ -1,33 +1,39 @@
 // Mobile class extends Gadget
 public class Mobile extends Gadget {
 
-    private int minutes;
-    private int texts;
+    private int minutesCredit;
 
-    // Constructor
-    public Mobile(int itemNumber, String brand, double price, int minutes, int texts) {
-        super(itemNumber, brand, price); // Call parent constructor
-        this.minutes = minutes;
-        this.texts = texts;
+    public Mobile(String model, double price, int weight, String size, int minutesCredit) {
+        super(model, price, weight, size);
+        this.minutesCredit = minutesCredit;
     }
 
-    // Method to make a call
-    public String makeCall(int callMinutes) {
-        if (callMinutes <= minutes) {
-            minutes -= callMinutes;
-            return "Call successful. Remaining minutes: " + minutes;
+    public int getMinutesCredit() {
+        return minutesCredit;
+    }
+
+    // Add credit method
+    public void addCredit(int amount) {
+        if (amount > 0) {
+            minutesCredit += amount;
         } else {
-            return "Not enough minutes.";
+            System.out.println("Please enter a positive amount of credit.");
         }
     }
 
-    // Override display method
-    @Override
-    public String displayInfo() {
-        return super.displayInfo() +
-               "\nType: Mobile" +
-               "\nMinutes: " + minutes +
-               "\nTexts: " + texts +
-               "\n-----------------------";
+    // Make call method
+    public void makeCall(String phoneNumber, int duration) {
+        if (duration <= minutesCredit) {
+            System.out.println("Calling " + phoneNumber + " for " + duration + " minutes.");
+            minutesCredit -= duration;
+        } else {
+            System.out.println("Insufficient credit to make this call.");
+        }
+    }
+
+    // Override display
+    public void display() {
+        super.display();
+        System.out.println("Minutes credit remaining: " + minutesCredit);
     }
 }
