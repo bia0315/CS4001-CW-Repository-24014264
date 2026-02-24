@@ -1,43 +1,35 @@
-public class Gadget
-{
-    private String model;
-    private double price;
-    private int weight;
-    private String size;
+// Parent class for all gadgets
+public class Gadget {
 
-    public Gadget(String model, double price, int weight, String size)
-    {
+    // Common attributes shared by all gadgets
+    protected String model;
+    protected double price;
+    protected int weight;
+
+    // Constructor to set values
+    public Gadget(String model, double price, int weight) {
         this.model = model;
         this.price = price;
         this.weight = weight;
-        this.size = size;
     }
 
-    public String getModel()
-    {
+    // Getter methods
+    public String getModel() {
         return model;
     }
 
-    public double getPrice()
-    {
+    public double getPrice() {
         return price;
     }
 
-    public int getWeight()
-    {
+    public int getWeight() {
         return weight;
     }
 
-    public String getSize()
-    {
-        return size;
-    }
-
-    public void display()
-    {
-        System.out.println("Model: " + model);
-        System.out.println("Price: £" + price);
-        System.out.println("Weight: " + weight + "g");
-        System.out.println("Size: " + size);
+    // Method to display basic gadget info
+    public String displayInfo() {
+        return "Model: " + model +
+               "\nPrice: " + price +
+               "\nWeight: " + weight;
     }
 }
