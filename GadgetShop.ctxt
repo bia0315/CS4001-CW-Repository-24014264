@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=GadgetShop
-comment1.params=
-comment1.target=GadgetShop()
-comment2.params=
-comment2.target=int\ getDisplayNumber()
-comment3.params=args
-comment3.target=void\ main(java.lang.String[])
-numComments=4
