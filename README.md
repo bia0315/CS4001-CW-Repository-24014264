@@ -11,6 +11,19 @@ This project is a Java-based Gadget Shop system developed for coursework.
 The application allows users to create and manage different types of gadgets using a graphical user interface (GUI).
 
 The system demonstrates key Object-Oriented Programming (OOP) concepts including inheritance, polymorphism, encapsulation, and abstraction.
+## 🌟 Skills I Learned From This Project:
+- Java programming  
+- Creating classes and objects  
+- Using constructors and methods  
+- Object-Oriented Programming (Inheritance, Encapsulation, Polymorphism)  
+- Building a GUI using Java Swing  
+- Event handling with buttons  
+- Input validation using try/catch  
+- Debugging errors and problem solving  
+- Using GitHub for project storage  
+- Running Java programs in Command Prompt  
+- Planning and building a full project from start to finish  
+- Improved confidence in coding  
 
 ---
 
